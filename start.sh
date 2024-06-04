@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-gunicorn FacturaElectronica.wsgi
+gunicorn FacturaElectronica.wsgi:application
+
