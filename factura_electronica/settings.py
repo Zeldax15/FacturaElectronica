@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-vk8p#82qh@y51cm7sj6m7ywrtmluu4i)u4tk=3@r9j4d2g$hw=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    
 ]
 
 ROOT_URLCONF = 'factura_electronica.urls'
@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'factura_electronica.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': os.environ.get('efectos_factura_electronica_dev'),
-        'USER': os.environ.get('factura'),
-        'PASSWORD': os.environ.get('hdpZR20005'),
-        'HOST': os.environ.get('efectos-factura-app.database.windows.net'),
+        'NAME': 'efectos_factura_electronica_dev',
+        'USER': 'factura',
+        'PASSWORD': 'hdpZR20005',
+        'HOST': 'efectos-factura-app.database.windows.net',
         'PORT': '',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
@@ -133,12 +133,12 @@ USE_TZ = True
 
 
 
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
 STATIC_TPM= os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
 
-os.makedirs(STATIC_TPM,exist_ok=True)
-os.makedirs(STATIC_ROOT,exist_ok=True)
+
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
@@ -151,7 +151,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-django_heroku.settings(locals())
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
