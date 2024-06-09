@@ -80,6 +80,10 @@ WSGI_APPLICATION = 'factura_electronica.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': './db.sqlite3',
+    },
+    'sqlserver': {
         'ENGINE': 'mssql',
         'NAME': 'efectos_factura_electronica_dev',
         'USER': 'factura',
@@ -88,7 +92,6 @@ DATABASES = {
         'PORT': '',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
-            
         },
     }
 }
