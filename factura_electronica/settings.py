@@ -83,18 +83,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': './db.sqlite3',
     },
-    'sqlserver': {
-        'ENGINE': 'mssql',
-        'NAME': 'efectos_factura_electronica_dev',
-        'USER': 'factura',
-        'PASSWORD': 'hdpZR20005',
-        'HOST': 'efectos-factura-app.database.windows.net',
-        'PORT': '',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-        },
+    
     }
-}
+
+
 
 
 
