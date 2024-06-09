@@ -170,7 +170,7 @@ nav.navbar {
 }
 
 nav.navbar .navbar-nav li.active a:not(.btn) {
-	color: #00a8ff !important;
+	color: red !important;
 }
 
 nav.navbar-fixed-top {
